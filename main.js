@@ -1,8 +1,14 @@
 var arr = [];
 var sum = 0;
 var input = document.createElement('div');
-var modPushed = false;
-var modCount = 0;
+var plusPushed = false;
+var plusCount = 0;
+var minusPushed = false;
+var minusCount = 0;
+var multiplyPushed = false;
+var multiplyCount = 0;
+var dividePushed = false;
+var divideCount = 0;
 
 $(document).ready(function(){
 	function addNumbers () {
@@ -86,70 +92,76 @@ $(document).ready(function(){
 			arr = arr.concat((this.id));
 			input.textContent = arr.join('');
 			document.getElementById('numberContainer').appendChild(input);
-			modPushed = false;
+			plusPushed = false;
+			minusPushed = false;
+			multiplyPushed = false;
+			dividePushed = false;
 		})
 		$('#clear').click(function(){
 			document.getElementById('numberContainer').innerHTML = "<br>";
 			arr = [];
+			sum = 0;
 		})
 		$('#add').click(function(){
-			if (modPushed === false){
-				if (modCount === 1) {
+			if (plusPushed === false){
+				if (plusCount === 1) {
 					addNumbers();
-					modCount = 0;
+					plusCount = 0;
 				}
 				arr.push("+")
 				input.textContent = arr.join('');;
 				document.getElementById('numberContainer').appendChild(input);
-				//console.log(arr);
-				modPushed = true
-				modCount++;
+				plusPushed = true
+				plusCount++;
 			}
 		})
 		$('#minus').click(function(){
-			if (modPushed === false){
-				if (modCount === 1) {
+			if (minusPushed === false){
+				if (minusCount === 1) {
 					subtractNumbers();
-					modCount = 0;
+					minusCount = 0;
 				}
 				arr.push("-")
 				input.textContent = arr.join('');;
 				document.getElementById('numberContainer').appendChild(input);
-				//console.log(arr);
-				modPushed = true
-				modCount++;
+				minusPushed = true
+				minusCount++;
 			}
 
 		})
 		$('#multiply').click(function(){
-			if (modPushed === false){
-				if (modCount === 1) {
+			if (multiplyPushed === false){
+				if (multiplyCount === 1) {
 					multiplyNumbers();
-					modCount = 0;
+					multiplyCount = 0;
 				}
 				arr.push("x")
 				input.textContent = arr.join('');;
 				document.getElementById('numberContainer').appendChild(input);
-				//console.log(arr);
-				modPushed = true
-				modCount++;
+				multiplyPushed = true
+				multiplyCount++;
 			}
 
 		})
 		$('#divide').click(function(){
-			if (modPushed === false){
-				if (modCount === 1) {
+			if (dividePushed === false){
+				if (divideCount === 1) {
 					divideNumbers();
-					modCount = 0;
+					divideCount = 0;
 				}
 				arr.push("/")
 				input.textContent = arr.join('');;
 				document.getElementById('numberContainer').appendChild(input);
-				//console.log(arr);
-				modPushed = true
-				modCount++;
+				dividePushed = true
+				divideCount++;
 			}
 
+		})
+		$('#apositive').click(function(){
+			neg = arr * -1;
+			input.textContent = neg;
+			document.getElementById('numberContainer').appendChild(input);
+			console.log(neg);
 		})
 
 		$('#equals').click(function(){
