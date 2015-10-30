@@ -1,0 +1,13 @@
+#numberContainer {
+	border: 1px solid black;
+}
+.numberButton{
+	border: 1px solid black;
+	width: 5vw;
+	height: 5vw;
+}
+.button{
+	border: 1px solid black;
+	width: 5vw;
+	height: 5vw;
+}
