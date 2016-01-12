@@ -1,3 +1,4 @@
+
 var arr = [];
 var sum = 0;
 var input = document.createElement('div');
