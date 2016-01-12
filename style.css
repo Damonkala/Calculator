@@ -1,0 +1,21 @@
+#numberContainer {
+	border: 1px solid black;
+	height: 100px;
+	width: 220px;
+	word-wrap: break-word;
+}
+.numberButton{
+	border: 1px solid black;
+	width: 5vw;
+	height: 5vw;
+}
+.button{
+	border: 1px solid black;
+	width: 5vw;
+	height: 5vw;
+}
+table, tr, td {
+	border: 1px solid black;
+	text-align: center;
+
+}
